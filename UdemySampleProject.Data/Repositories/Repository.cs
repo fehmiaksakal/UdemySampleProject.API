@@ -8,10 +8,10 @@ using UdemySampleProject.Core.Repositories;
 
 namespace UdemySampleProject.Data.Repositories
 {
-    class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
+   public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
     {
-        public readonly DbContext _context;
-        public readonly DbSet<TEntity> _dbSet;
+        protected readonly DbContext _context;
+        private readonly DbSet<TEntity> _dbSet;
 
         public Repository(DbContext context)
         {
